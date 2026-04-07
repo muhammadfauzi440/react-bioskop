@@ -67,7 +67,7 @@ export default function Search() {
             {loading ? (
                 <div className="text-center text-slate-400 mt-20">
                     <FontAwesomeIcon icon={faSpinner} spin className="text-4xl mb-4 text-amber-400" />
-                    <p className="text-xl font-bold animate-pulse">Mencari FIlm . . . </p>
+                    <p className="text-xl font-bold animate-pulse">Mencari Film . . . </p>
                 </div>
             ) : (
                 <>
