@@ -1,7 +1,4 @@
 import { Routes, Route} from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
-
 import Home from '../pages/Home';
 import Search from '../pages/Search';
 import MovieDetail from '../pages/MovieDetail';

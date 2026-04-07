@@ -28,7 +28,7 @@ export default function Home() {
         setDaftarFilm(response.data.results);
         setLoading(false);
       } catch (error) {
-        console.error("Gagal mengambil data dari TMDB: ".error);
+        console.error("Gagal mengambil data dari TMDB: ", error);
         setLoading(false);
       }
     };
