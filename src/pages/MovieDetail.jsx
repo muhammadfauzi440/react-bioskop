@@ -21,7 +21,8 @@ export default function MovieDetail() {
                         params: {
                             api_key: import.meta.env.VITE_TMDB_API_KEY,
                             language: "id-ID",
-                            append_to_response: "videos"
+                            append_to_response: "videos",
+                            include_video_language: "id, en"
                         }
                     }
                 );
@@ -146,7 +147,7 @@ export default function MovieDetail() {
 
                     <div className="mb-8">
                         <h3 className="text-2xl font-bold text-gray-200 mb-3">Sinposis</h3>
-                        <p className="text-slate-300 leading-relaxed text-lg font-medium">{detailFilm.overfiew ? detailFilm.overfiew : "Belum ada sinopsis bahasa Indonesia utuk film ini."}</p>
+                        <p className="text-slate-300 leading-relaxed text-lg font-medium">{detailFilm.overview ? detailFilm.overview : "Belum ada sinopsis bahasa Indonesia utuk film ini."}</p>
                     </div>
 
                     {trailer && (
@@ -157,7 +158,7 @@ export default function MovieDetail() {
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-3 bg-red-600 hover:bg-red-700 text-white font-bold px-8 py-4 rounded-xl transition-all hover:scale-105 active:scale-95 shadow-lg shadow-red-900/50"
                             >
-                                <FontAwesomeIcon icon={faPlay}/>
+                                <FontAwesomeIcon icon={faPlay}/> Tonton trailer 
                             </a>
                         </div>
                     )}
