@@ -20,9 +20,9 @@ export default function MovieDetail() {
                     {
                         params: {
                             api_key: import.meta.env.VITE_TMDB_API_KEY,
-                            language: "id-ID",
+                            language: "en-EN",
                             append_to_response: "videos",
-                            include_video_language: "id, en"
+                            include_video_language: "id,en"
                         }
                     }
                 );
@@ -147,7 +147,7 @@ export default function MovieDetail() {
 
                     <div className="mb-8">
                         <h3 className="text-2xl font-bold text-gray-200 mb-3">Sinposis</h3>
-                        <p className="text-slate-300 leading-relaxed text-lg font-medium">{detailFilm.overview ? detailFilm.overview : "Belum ada sinopsis bahasa Indonesia utuk film ini."}</p>
+                        <p className="text-slate-300 leading-relaxed text-lg font-medium">{detailFilm.overview}</p>
                     </div>
 
                     {trailer && (
