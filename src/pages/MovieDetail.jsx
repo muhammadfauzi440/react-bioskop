@@ -2,7 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft, faCalendarAlt, faClock, faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft, faCalendarAlt, faClock, faSpinner, faStar } from "@fortawesome/free-solid-svg-icons";
 
 export default function MovieDetail() {
     const { id } = useParams();
@@ -127,6 +127,22 @@ export default function MovieDetail() {
                             "{detailFilm.tagline}"
                         </p>
                     )}
+
+                    <div className="flex flex-wrap items-center gap-4 mb-6">
+                        <div className="bg-amber-500/10 text-amber-400 border border-amber-500/30 px-4 py-2 rounded-xl font-black text-lg flex items-center gap-2">
+                            <FontAwesomeIcon icon={faStar} className="text-amber-400"/> {detailFilm.vote_average.toFixed(1)} <span className="text-sm font-normal text-slate-400">/ 10</span>
+                        </div>
+
+                        <div className="flex flex-wrap gap-2">
+                            {detailFilm.genres.map((genre) => (
+                                <span key={genre.id}
+                                className="bg-slate-800 text-slate-300 border border-slate-700 px-3 py-1 rounded-full text-sm font-bold"
+                                >
+                                    {genre.name}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
