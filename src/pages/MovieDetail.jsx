@@ -2,7 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft, faCalendarAlt, faClock, faSpinner, faStar } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft, faCalendarAlt, faClock, faPlay, faSpinner, faStar } from "@fortawesome/free-solid-svg-icons";
 
 export default function MovieDetail() {
     const { id } = useParams();
@@ -75,7 +75,7 @@ export default function MovieDetail() {
                 <span className="group-hover:scale-105 transition-transform font-semibold">Kembali</span>
             </Link>
 
-            <div className="relative w-full h-75 md:h-100 rounded-3xl overflow-hidden shadow-2xl shadow-emerald-900/20 mb-8 border border-slate-700">
+            <div className="relative  w-full h-75 md:h-100 rounded-3xl overflow-hidden shadow-2xl shadow-emerald-900/20 mb-8 border border-slate-700">
                 {detailFilm.backdrop_path ? (
                     <img
                     src={`https://image.tmdb.org/t/p/original${detailFilm.backdrop_path}`}
@@ -143,6 +143,24 @@ export default function MovieDetail() {
                             ))}
                         </div>
                     </div>
+
+                    <div className="mb-8">
+                        <h3 className="text-2xl font-bold text-gray-200 mb-3">Sinposis</h3>
+                        <p className="text-slate-300 leading-relaxed text-lg font-medium">{detailFilm.overfiew ? detailFilm.overfiew : "Belum ada sinopsis bahasa Indonesia utuk film ini."}</p>
+                    </div>
+
+                    {trailer && (
+                        <div className="mt-auto pt-4">
+                            <a
+                            href={`https://www.youtube.com/watch?v=${trailer}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-3 bg-red-600 hover:bg-red-700 text-white font-bold px-8 py-4 rounded-xl transition-all hover:scale-105 active:scale-95 shadow-lg shadow-red-900/50"
+                            >
+                                <FontAwesomeIcon icon={faPlay}/>
+                            </a>
+                        </div>
+                    )}
                 </div>
             </div>
         </div>
