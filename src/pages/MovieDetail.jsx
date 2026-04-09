@@ -2,7 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft, faCalendarAlt, faClock, faPlay, faSpinner, faStar } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft, faCalendarAlt, faClock, faPlay, faSpinner, faStar, faUser } from "@fortawesome/free-solid-svg-icons";
 
 export default function MovieDetail() {
     const { id } = useParams();
@@ -21,7 +21,7 @@ export default function MovieDetail() {
                         params: {
                             api_key: import.meta.env.VITE_TMDB_API_KEY,
                             language: "en-US",
-                            append_to_response: "videos",
+                            append_to_response: "videos,credits",
                             include_video_language: "id,en"
                         }
                     }
@@ -119,7 +119,7 @@ export default function MovieDetail() {
                     </div>
                 </div>
 
-                <div className="flex flex-col grow">
+                <div className="flex flex-col grow min-w-0">
                     <h1 className="text-4xl md:text-5xl font-black text-white mb-2 leading-tight">
                         {detailFilm.title}
                     </h1>
@@ -160,6 +160,47 @@ export default function MovieDetail() {
                             >
                                 <FontAwesomeIcon icon={faPlay}/> Tonton trailer 
                             </a>
+                        </div>
+                    )}
+
+                    {detailFilm.credits?.cast?.length > 0 && (
+                        <div className="mt-12 border-t border-slate-800 pt-8">
+                            <h3 className="text-2xl font-bold text-white gap-3 mb-6 flex items-center">
+                                <FontAwesomeIcon icon={faUser} className="text-blue-400"/> Pemain utama
+                            </h3>
+
+                            <div className="flex gap-4 overflow-x-auto shrink-0 pb-4 snap-x custom-scrollbar">
+                                {detailFilm.credits.cast.slice(0, 12).map((aktor) =>
+                                    <div key={aktor.id}
+                                    className="bg-slate-800 border border-slate-700 rounded-xl overflow-hidden shrink-0 w-35 snap-start hover:scale-105 transition-transform duration-300"
+                                    >
+                                        {aktor.profile_path ? (
+                                            <img 
+                                            src={`https://image.tmdb.org/t/p/w185${aktor.profile_path}`}
+                                            alt={aktor.name}
+                                            className="w-full h-43 object-cover"
+                                            />
+                                        ) : (
+                                            <div className="w-full h-43 text-center text-sm font-bold bg-slate-700 flex items-center justify-center text-slate-500 p-2">
+                                                Tidak ada foto
+                                            </div>
+                                        )}
+
+                                        <div className="p-3">
+                                            <h4 title={aktor.name}
+                                            className="text-white font-bold text-sm leading-tight line-clamp-3 mb-1"
+                                            >
+                                                {aktor.name}
+                                            </h4>
+                                            <p title={aktor.character}
+                                            className="text-xs text-slate-400 line-clamp-2"
+                                            >
+                                                {aktor.character}
+                                            </p>
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
                         </div>
                     )}
                 </div>
