@@ -2,7 +2,7 @@ import { Routes, Route} from 'react-router-dom';
 import Home from '../pages/Home';
 import Search from '../pages/Search';
 import MovieDetail from '../pages/MovieDetail';
-import WatcList from '../pages/WatchList';
+import WatchList from '../pages/WatchList';
 
 export default function Main() {
     return (
@@ -11,7 +11,7 @@ export default function Main() {
                 <Route path='/' element={<Home />}/>
                 <Route path='/search' element={<Search />}/>
                 <Route path='/movie/:id' element={<MovieDetail />}/>
-                <Route path='/watchlist' element={<WatcList />}/>
+                <Route path='/watchlist' element={<WatchList />}/>
             </Routes>
         </main>
     )

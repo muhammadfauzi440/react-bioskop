@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-export default function WatcList() {
+export default function WatchList() {
     const [watchList, setWatchList] = useState([]);
 
     useEffect(() => {
@@ -17,7 +17,7 @@ export default function WatcList() {
                 <p>Belum ada film yang kamu tambahkan ke favorit</p>
             ) : (
                 <div>
-                    {watchList.map((movie) => {
+                    {watchList.map((movie) => (
                         <div key={movie.id}>
                             <img 
                             src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
@@ -27,11 +27,11 @@ export default function WatcList() {
                                 {movie.title}
                             </h2>
                             <p>
-                                Rating: {movie.vote_average}
+                                Rating: {movie.vote_average.toFixed(1)}
                             </p>
                             <Link to={`/movie/${movie.id}`}>Lihat detail</Link>
                         </div>
-                    })}
+                    ))}
                 </div>
             )}
         </div>
