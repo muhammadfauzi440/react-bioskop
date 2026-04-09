@@ -9,6 +9,7 @@ export default function MovieDetail() {
     const [ detailFilm, setDetailFilm] = useState(null);
     const [ trailer, setTrailer] = useState(null);
     const [ loading, setLoading] = useState(true);
+    const [ isFavorite, setIsFavorite] = useState(false);
 
     useEffect(() => { 
         const ambilDetailFilm = async () => {
@@ -45,6 +46,24 @@ export default function MovieDetail() {
 
         ambilDetailFilm();
     }, [id]);
+
+    useEffect(() => {
+        const watchList = JSON.parse(localStorage.getItem("watchList")) || [];
+        const isExist = watchList.some((movie) => movie.id === Number(id));
+        setIsFavorite(isExist);
+    }, [id]);
+
+    const toggleFavorite = () => {
+        let watchList = JSON.parse(localStorage.getItem("watchList")) || [];
+        if (isFavorite) {
+            watchList = watchList.filter((movie) => movie.id !== Number(id));
+        } else {
+            watchList.push(detailFilm);
+        }
+
+        localStorage.setItem("watchList", JSON.stringify(watchList));
+        setIsFavorite(!isFavorite);
+    }
 
     if (loading) {
         return (
@@ -162,6 +181,12 @@ export default function MovieDetail() {
                             </a>
                         </div>
                     )}
+
+                    <div>
+                        <button onClick={toggleFavorite}>
+                            {isFavorite ? "Hapus Dari Favorit" : "Tambahkan Ke Favorit"}
+                        </button>
+                    </div>
 
                     {detailFilm.credits?.cast?.length > 0 && (
                         <div className="mt-12 border-t border-slate-800 pt-8">

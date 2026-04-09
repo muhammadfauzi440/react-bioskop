@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFilm, faSearch, faHome } from "@fortawesome/free-solid-svg-icons";
+import { faFilm, faSearch, faHome, faBookmark } from "@fortawesome/free-solid-svg-icons";
 
 export default function Navbar() {
   return (
@@ -22,6 +22,11 @@ export default function Navbar() {
             className="hover:text-emerald-400 transition-colors flex items-center gap-1 hover:scale-110"
           >
             <FontAwesomeIcon icon={faHome} /> Beranda
+          </Link>
+          <Link
+          to="watchlist"
+          >
+            <FontAwesomeIcon icon={faBookmark}/> Watch List
           </Link>
           <Link
             to="/search"
