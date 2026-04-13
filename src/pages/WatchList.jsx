@@ -62,7 +62,7 @@ export default function WatchList() {
                 </div>
               </div>
 
-              <div className="p-4 flex flex-col grow justify-between gp-2">
+              <div className="p-4 flex flex-col grow justify-between gap-2">
                 <h2
                   title={movie.title}
                   className="text-lg text-slate-100 font-bold line-clamp-1"
