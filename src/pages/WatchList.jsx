@@ -75,7 +75,7 @@ export default function WatchList() {
                     {movie.vote_average.toFixed(1)}
                   </span>
                   <span>
-                    {movie.release_date.substring(0, 4)}
+                    {movie.release_date?.substring(0, 4)}
                   </span>
                 </div>
               </div>
