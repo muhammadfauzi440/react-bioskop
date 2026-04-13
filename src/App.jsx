@@ -1,6 +1,4 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faFilm, faSearch, faHome} from '@fortawesome/free-solid-svg-icons'
 
 import Navbar from "./components/Navbar"
 import Main from "./components/Main"
