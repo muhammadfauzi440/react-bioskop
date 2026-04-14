@@ -10,7 +10,6 @@ import {
   faSpinner,
   faStar,
   faUser,
-  faBookmark,
 } from "@fortawesome/free-solid-svg-icons";
 export default function MovieDetail() {
   const { id } = useParams();
