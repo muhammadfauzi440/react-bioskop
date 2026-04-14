@@ -181,7 +181,7 @@ export default function MovieDetail() {
           <div className="flex flex-wrap items-center gap-4 mb-6">
             <div className="bg-amber-500/10 text-amber-400 border border-amber-500/30 px-4 py-2 rounded-xl font-black text-lg flex items-center gap-2">
               <FontAwesomeIcon icon={faStar} className="text-amber-400" />{" "}
-              {detailFilm.vote_average.toFixed(1)}{" "}
+              {detailFilm.vote_average.toFixed(1)}
               <span className="text-sm font-normal text-slate-400">/ 10</span>
             </div>
 

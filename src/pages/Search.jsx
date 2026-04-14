@@ -42,7 +42,7 @@ export default function Search() {
 
     return (
         <div className="w-full">
-            <h1 className="text-2xl font-bold text-amber-400 mb-8 border-l-4 border-amber-400 pl-4">
+            <h1 className="text-3xl font-bold text-amber-400 mb-8 border-l-4 border-amber-400 pl-4">
                 Cari judul Film <FontAwesomeIcon icon={faSearch} className="ml-2"/>
             </h1>
 
