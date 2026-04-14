@@ -24,7 +24,7 @@ export default function Home() {
             ? `${import.meta.env.VITE_TMDB_BASE_URL}/trending/movie/day`
             : `${import.meta.env.VITE_TMDB_BASE_URL}/discover/movie`;
 
-        const respone = await axios.get(url, {
+        const response = await axios.get(url, {
           params: {
             api_key: import.meta.env.VITE_TMDB_API_KEY,
             language: "en-US",
@@ -34,9 +34,9 @@ export default function Home() {
         });
 
         if (page === 1) {
-          setDaftarFilm(respone.data.results);
+          setDaftarFilm(response.data.results);
         } else {
-          setDaftarFilm((dataLama) => [...dataLama, ...respone.data.results]);
+          setDaftarFilm((dataLama) => [...dataLama, ...response.data.results]);
         }
 
         setLoading(false);
@@ -77,10 +77,12 @@ export default function Home() {
       {loading && page === 1 ? (
         <div>
           <p>Memuat Film ...</p>
-          <div key={item}>
-            <div>(Gambar poster abu-abu)</div>
-            <div>(Gambar text abu-abu)</div>
-          </div>
+          {arraySkeleton.map((item) => (
+            <div key={item}>
+              <div>(Gambar poster abu-abu)</div>
+              <div>(Gambar text abu-abu)</div>
+            </div>
+          ))}
         </div>
       ) : (
         <>
@@ -130,7 +132,7 @@ export default function Home() {
 
           <div>
             <button onClick={() => setPage(page + 1)} disabled={loading}>
-                {loading ? "Menambahkan Film" : "Muat Lebih Banyak"}
+              {loading ? "Menambahkan Film" : "Muat Lebih Banyak"}
             </button>
           </div>
         </>
