@@ -60,7 +60,7 @@ export default function Home() {
     <div className="w-full">
       <h1 className="capitalize text-3xl font-bold text-emerald-400 mb-8 border-l-4 border-emerald-400 pl-4">
         {kategori === "" ? "sedang trending hari ini" : "daftar film pilihan"}
-        <FontAwesomeIcon icon={faFire} className="text-orange-600" />
+        <FontAwesomeIcon icon={faFire} className="text-orange-600 ml-2" />
       </h1>
 
       <div className="flex items-center gap-4 mb-10 overflow-x-auto pb-4 custom-scrollbar">

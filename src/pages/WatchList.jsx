@@ -17,9 +17,9 @@ export default function WatchList() {
 
   return (
     <div className="w-full pb-10">
-      <h1 className="text-3xl font-bold text-emerald-400 mb-8 border-l-4 border-emerald-400 pl-4 flex items-center gap-3">
-        <FontAwesomeIcon icon={faBookmark} />
+      <h1 className="text-3xl font-bold text-emerald-400 mb-8 border-l-4 border-emerald-400 pl-4 flex items-center gap-2">
         Daftar tontonan saya
+        <FontAwesomeIcon icon={faBookmark} className="text-slate-400"/>
       </h1>
 
       {watchList.length === 0 ? (
