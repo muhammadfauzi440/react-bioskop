@@ -99,12 +99,19 @@ export default function Home() {
       <br />
 
       {loading && page === 1 ? (
-        <div>
-          <p>Memuat Film ...</p>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
           {arraySkeleton.map((item) => (
-            <div key={item}>
-              <div>(Gambar poster abu-abu)</div>
-              <div>(Gambar text abu-abu)</div>
+            <div key={item} className="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 flex flex-col animate-pulse">
+              <div className="w-full aspect-2/3 bg-slate-700"></div>
+
+              <div className="p-4 flex flex-col gap-3">
+                <div className="h-4 bg-slate-700 rounded w-4/4"></div>
+                <div className="flex justify-between items-center mt-2">
+                  <div className="h-3 bg-slate-700 rounded w-1/4"></div>
+                  <div className="h-3 bg-slate-700 rounded w-1/5"></div>
+                </div>
+              </div>
+
             </div>
           ))}
         </div>
