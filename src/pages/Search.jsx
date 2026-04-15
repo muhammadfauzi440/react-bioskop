@@ -43,7 +43,7 @@ export default function Search() {
     return (
         <div className="w-full">
             <h1 className="text-3xl font-bold text-emerald-400 mb-8 border-l-4 border-emerald-400 pl-4">
-                Cari judul Film <FontAwesomeIcon icon={faSearch} className="ml-2"/>
+                Cari judul Film <FontAwesomeIcon icon={faSearch} className="text-slate-400 ml-2"/>
             </h1>
 
             <form onSubmit={handleCariFilm} className="max-w-2xl mx-auto mb-12 flex gap-2">
