@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import axios from "axios"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faSearch, faArrowRight, faStar, faSpinner, faCircleXmark } from "@fortawesome/free-solid-svg-icons"
@@ -8,8 +8,13 @@ export default function Search() {
     const [ kataKunci, setKataKunci ] = useState("");
     const [ hasilPencarian, setHasilPencarian] = useState([]);
     const [ loading, setLoading] = useState(false);
-
     const [ sudahDicari, setSudahDicari] = useState(false);
+    const [ page, setPage] = useState(1);
+    const inputRef = useRef(null);
+
+    useEffect(() => {
+        inputRef.current?.focus();
+    }, []);
 
     const handleCariFilm = async (event) => {
         event.preventDefault();
@@ -48,6 +53,7 @@ export default function Search() {
 
             <form onSubmit={handleCariFilm} className="max-w-2xl mx-auto mb-12 flex gap-2">
                 <input 
+                ref={inputRef}
                 type="text"
                 placeholder="Ketik judul film yang ingin dicari"
                 value={kataKunci}
