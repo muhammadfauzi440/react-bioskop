@@ -63,13 +63,37 @@ export default function Home() {
         <FontAwesomeIcon icon={faFire} className="text-orange-600" />
       </h1>
 
-      <div className="">
-        <span>Pilih Kategori: </span>
-        <button onClick={() => gantiKategori("")}>Semua</button>
-        <button onClick={() => gantiKategori("28")}>Action</button>
-        <button onClick={() => gantiKategori("27")}>Horror</button>
-        <button onClick={() => gantiKategori("35")}>Komedi</button>
-        <button onClick={() => gantiKategori("16")}>Animasi</button>
+      <div className="flex items-center gap-4 mb-10 overflow-x-auto pb-4 custom-scrollbar">
+        <span className="font-semibold text-slate-400 shrink-0">
+          Pilih Kategori:{" "}
+        </span>
+        <div className="flex gap-3 shrink-0">
+          <button onClick={() => gantiKategori("")} 
+          className={`px-5 py-2 font-bold rounded-full transition-all duration-300 ${kategori === "" ? "bg-emerald-500 text-slate-900 shadow-lg shadow-emerald-500/30" : "bg-slate-800 text-slate-900 hover:bg-slate-700 border border-slate-700"}`}
+          >
+          Semua
+          </button>
+          <button onClick={() => gantiKategori("28")}
+          className={`px-5 py-2 font-bold rounded-full transition-all duration-300 ${kategori === "28" ? "bg-emerald-500 text-slate-900 shadow-lg shadow-emerald-500/30" : "bg-slate-800 text-slate-900 hover:bg-slate-700 border border-slate-700"}`}
+          >
+          Action
+          </button>
+          <button onClick={() => gantiKategori("27")}
+          className={`px-5 py-2 font-bold rounded-full transition-all duration-300 ${kategori === "27" ? "bg-emerald-500 text-slate-900 shadow-lg shadow-emerald-500/30" : "bg-slate-800 text-slate-900 hover:bg-slate-700 border border-slate-700"}`}
+          >
+          Horror
+          </button>
+          <button onClick={() => gantiKategori("35")}
+          className={`px-5 py-2 font-bold rounded-full transition-all duration-300 ${kategori === "35" ? "bg-emerald-500 text-slate-900 shadow-lg shadow-emerald-500/30" : "bg-slate-800 text-slate-900 hover:bg-slate-700 border border-slate-700"}`}
+          >
+          Komedi
+          </button>
+          <button onClick={() => gantiKategori("16")}
+          className={`px-5 py-2 font-bold rounded-full transition-all duration-300 ${kategori === "16" ? "bg-emerald-500 text-slate-900 shadow-lg shadow-emerald-500/30" : "bg-slate-800 text-slate-900 hover:bg-slate-700 border border-slate-700"}`}
+          >
+          Animasi
+          </button>
+        </div>
       </div>
 
       <br />
