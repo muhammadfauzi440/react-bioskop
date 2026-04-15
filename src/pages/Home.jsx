@@ -93,6 +93,21 @@ export default function Home() {
           >
           Animasi
           </button>
+          <button onClick={() => gantiKategori("9648")}
+          className={`px-5 py-2 font-bold rounded-full transition-all duration-300 ${kategori === "9648" ? "bg-emerald-500 text-slate-900 shadow-lg shadow-emerald-500/30" : "bg-slate-800 text-slate-900 hover:bg-slate-700 border border-slate-700"}`}
+          >
+          Misteri
+          </button>
+          <button onClick={() => gantiKategori("10402")}
+          className={`px-5 py-2 font-bold rounded-full transition-all duration-300 ${kategori === "10402" ? "bg-emerald-500 text-slate-900 shadow-lg shadow-emerald-500/30" : "bg-slate-800 text-slate-900 hover:bg-slate-700 border border-slate-700"}`}
+          >
+          Musik
+          </button>
+          <button onClick={() => gantiKategori("12")}
+          className={`px-5 py-2 font-bold rounded-full transition-all duration-300 ${kategori === "12" ? "bg-emerald-500 text-slate-900 shadow-lg shadow-emerald-500/30" : "bg-slate-800 text-slate-900 hover:bg-slate-700 border border-slate-700"}`}
+          >
+          Musik
+          </button>
         </div>
       </div>
 
@@ -105,7 +120,7 @@ export default function Home() {
               <div className="w-full aspect-2/3 bg-slate-700"></div>
 
               <div className="p-4 flex flex-col gap-3">
-                <div className="h-4 bg-slate-700 rounded w-4/4"></div>
+                <div className="h-4 bg-slate-700 rounded w-full"></div>
                 <div className="flex justify-between items-center mt-2">
                   <div className="h-3 bg-slate-700 rounded w-1/4"></div>
                   <div className="h-3 bg-slate-700 rounded w-1/5"></div>
@@ -128,7 +143,7 @@ export default function Home() {
                   <img
                     src={`https://image.tmdb.org/t/p/w500${film.poster_path}`}
                     alt={film.title}
-                    className="w-full h-auto object-cover"
+                    className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
                     <span className="text-white font-bold bg-emerald-600 px-4 py-2 rounded-full">
