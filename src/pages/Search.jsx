@@ -42,7 +42,7 @@ export default function Search() {
 
     return (
         <div className="w-full">
-            <h1 className="text-3xl font-bold text-amber-400 mb-8 border-l-4 border-amber-400 pl-4">
+            <h1 className="text-3xl font-bold text-emerald-400 mb-8 border-l-4 border-emerald-400 pl-4">
                 Cari judul Film <FontAwesomeIcon icon={faSearch} className="ml-2"/>
             </h1>
 
@@ -52,13 +52,13 @@ export default function Search() {
                 placeholder="Ketik judul film yang ingin dicari"
                 value={kataKunci}
                 onChange={(event) => setKataKunci(event.target.value)}
-                className="w-full p-4 rounded-xl bg-slate-800 border-2 border-slate-700 text-slate-100 focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition-all text-lg placeholder:text-slate-500"
+                className="w-full p-4 rounded-xl bg-slate-800 border-2 border-slate-700 text-slate-100 focus:outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400 transition-all text-lg placeholder:text-slate-500"
                 />
 
                 <button
                 type="submit"
                 disabled={loading}
-                className="bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold px-8 rounded-xl transition-colors disabled:opacity-50 flex items-center gap-2 text-lg"
+                className="bg-emerald-500 hover:bg-emerald-600 text-slate-900 font-bold px-8 rounded-xl transition-colors disabled:opacity-50 flex items-center gap-2 text-lg"
                 >
                 {loading ? <FontAwesomeIcon icon={faSpinner} spin/> : "Cari"}
                 </button>
@@ -66,7 +66,7 @@ export default function Search() {
 
             {loading ? (
                 <div className="text-center text-slate-400 mt-20">
-                    <FontAwesomeIcon icon={faSpinner} spin className="text-4xl mb-4 text-amber-400" />
+                    <FontAwesomeIcon icon={faSpinner} spin className="text-4xl mb-4 text-emerald-400" />
                     <p className="text-xl font-bold animate-pulse">Mencari Film . . . </p>
                 </div>
             ) : (
@@ -83,7 +83,7 @@ export default function Search() {
                             <Link
                             to={`/movie/${film.id}`}
                             key={film.id}
-                            className="bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:scale-105 hover:shadow-amber-500/20 transition-all duration-300 border border-slate-700 flex flex-col group"
+                            className="bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:scale-105 hover:shadow-emerald-500/20 transition-all duration-300 border border-slate-700 flex flex-col group"
                             >
                                 <div className="relative overflow-hidden aspect-2/3 bg-slate-700">
                                     {film.poster_path ? (
@@ -99,7 +99,7 @@ export default function Search() {
                                     )}
 
                                     <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                                        <span className="text-slate-900 font-bold bg-amber-400 px-4 py-2 rounded-full">
+                                        <span className="text-slate-900 font-bold bg-emerald-400 px-4 py-2 rounded-full">
                                             Lihat detail <FontAwesomeIcon icon={faArrowRight}/>
                                         </span>
                                     </div>
