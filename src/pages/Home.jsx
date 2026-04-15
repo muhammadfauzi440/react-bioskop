@@ -161,9 +161,19 @@ export default function Home() {
 
           <br />
 
-          <div>
-            <button onClick={() => setPage(page + 1)} disabled={loading}>
-              {loading ? "Menambahkan Film" : "Muat Lebih Banyak"}
+          <div className="mt-12 mb-8 flex justify-center">
+            <button onClick={() => setPage(page + 1)}
+            disabled={loading}
+            className="cursor-pointer bg-slate-800 hover:bg-slate-700 text-emerald-400 border border-slate-700 hover:border-emerald-500 font-bold text-lg px-8 py-4 rounded-full transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg flex items-center gap-3"
+            >
+              {loading ? (
+                <>
+                  <span className="w-5 h-5 border-2 border-emerald-400 border-t-transparent rounded-full animate-spin duration-500"></span>
+                    Memuat Data ...
+                </>
+              ) : (
+                "Muat Lebih Banyak Film"
+              )}
             </button>
           </div>
         </>
